@@ -21,7 +21,7 @@ class Cart extends Component {
                                     <Title name='Yours' title='Cart' />
                                     <CartColumn />
                                     <CartList value={value} />
-                                    <CarTotal value={value} />
+                                    <CarTotal value={value} history={this.props.history} />
                                 </>
                             )
                         } else {

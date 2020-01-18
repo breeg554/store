@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import PayPalButton from './PayPalButton';
 
 const StyledWrapper = styled.div`
 text-transform: uppercase;
@@ -30,7 +31,7 @@ transform:scale(1.1);
 
 `
 
-const CarTotal = ({ value: { cartSubTotal, cartTax, cartTotal, clearCarts } }) => {
+const CarTotal = ({ value: { cartSubTotal, cartTax, cartTotal, clearCarts }, history }) => {
     return (
         <>
             <StyledWrapper>
@@ -46,6 +47,7 @@ const CarTotal = ({ value: { cartSubTotal, cartTax, cartTotal, clearCarts } }) =
                 <h5>
                     Total: <strong>${cartTotal}</strong>
                 </h5>
+                <PayPalButton total={cartTotal} clearCarts={clearCarts} history={history} />
             </StyledWrapper>
         </>
     );

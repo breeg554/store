@@ -47,11 +47,11 @@ const StyledAddToCart = styled.button`
 cursor: pointer;
 position:absolute;
 top:0;
-right:-30%;
+right:-80%;
 padding: 5px 10px;
 border:1px solid black;
 background:transparent;
-transition: all 0.1s ease-in-out;
+transition: all 0.2s ease-in-out;
 `
 
 
