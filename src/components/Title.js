@@ -10,11 +10,15 @@ h1{
     font-weight: bold;
 }
 strong{
-    color: ${({ theme }) => theme.colors.mainBlue};
+    color: ${({ theme }) => theme.colors.lightBlue};
 }
 ${({ theme }) => theme.mediaQ.medium}{
   font-size: 2rem;
 }
+${({ theme }) => theme.mediaQ.large}{
+    font-size: 3rem;
+    padding: 3rem 0;
+  }
 `
 
 const Title = ({ name, title }) => {

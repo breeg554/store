@@ -12,10 +12,7 @@ display:flex;
 justify-content:center;
 flex-wrap: wrap;
 
-// ${({ theme }) => theme.mediaQ.medium}{
-//     grid-template-columns: 1fr 1fr;
-//     // grid-column-gap: 2rem;
-// }
+
 `
 
 
