@@ -6,6 +6,9 @@ width: 100%;
 text-align: center;
 padding: 2rem 0;
 font-size: 1.5rem;
+h1{
+    font-weight: bold;
+}
 strong{
     color: ${({ theme }) => theme.colors.mainBlue};
 }

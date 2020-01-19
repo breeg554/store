@@ -49,9 +49,17 @@ position:absolute;
 top:0;
 right:-80%;
 padding: 5px 10px;
-border:1px solid black;
-background:transparent;
-transition: all 0.2s ease-in-out;
+border:none;
+border-radius: 5px;
+background:${({ theme }) => theme.colors.mainDark};
+color:${({ theme }) => theme.colors.mainWhite};
+transition: right 0.2s ease-in-out , transform 0.1s ease-in-out;
+&:disabled{
+    background-color:gray;
+}
+&:hover{
+    transform:scale(1.1);
+}
 `
 
 

@@ -1,9 +1,9 @@
 export const theme = {
     colors: {
-        mainBlue: '#2a2a72',
+        mainBlue: '#2f3238',
         lightBlue: '#009ffd',
-        mainWhite: '#f3f3f3',
-        mainDark: '#232528',
+        mainWhite: '#f6f6f6',
+        mainDark: '#060a12',
         mainYellow: '#ffa400'
     },
     mediaQ: {

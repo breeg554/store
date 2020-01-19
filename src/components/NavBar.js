@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import logo from '../logo.svg';
 import { StyledButton } from './Button';
+import { ProductConsumer } from '../context';
 
 const StyledNav = styled.nav`
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.mainBlue};
@@ -20,8 +21,25 @@ const StyledNav = styled.nav`
     a{
         color: ${({ theme }) => theme.colors.mainWhite};
         text-decoration: none;
+        text-transform: uppercase;
     }
+    i:nth-of-type(1){
+        font-size:2rem;
+    }
+   
 
+`
+
+const StyledCounter = styled.span`
+position:absolute;
+top:-0.3rem;
+left:-0.7rem;
+line-height:1.5rem;
+width:1.5rem;
+height:1.5rem;
+border-radius: 10px;
+color:${({ theme }) => theme.colors.mainDark};
+background-color: ${({ theme }) => theme.colors.mainWhite};
 `
 
 
@@ -32,7 +50,7 @@ class NavBar extends Component {
         return (
             <StyledNav>
                 <Link to='/'>
-                    <img src={logo} alt="Logo" />
+                    <i className="fas fa-mobile-alt"></i>
                 </Link>
                 <ul>
                     <li>
@@ -41,12 +59,17 @@ class NavBar extends Component {
                         </Link>
                     </li>
                 </ul>
-                <Link to='/cart'>
-                    <StyledButton>
-                        <span><i className="fas fa-cart-plus"></i></span>
-                        <span>My cart</span>
-                    </StyledButton>
-                </Link>
+                <ProductConsumer>
+                    {value => (
+                        <Link to='/cart'>
+                            <StyledButton>
+                                <span><i className="fas fa-cart-plus"></i></span>
+                                <span>My cart</span>
+                                <StyledCounter>{value.howManyProducts}</StyledCounter>
+                            </StyledButton>
+                        </Link>
+                    )}
+                </ProductConsumer>
             </StyledNav>
         );
     }
